@@ -3,7 +3,7 @@
 
 Name:           sleep
 Version:        2.1.18
-Release:        %mkrel 1
+Release:        %mkrel 2
 Epoch:          1
 Summary:        A perl inspired embed-able scripting language for Java applications
 License:        LGPL
@@ -17,8 +17,6 @@ BuildRequires:  ant >= 0:1.6
 BuildRequires:  java-javadoc
 BuildRequires:  jpackage-utils >= 0:1.5
 %if %{gcj_support}
-Requires(post): java-gcj-compat
-Requires(postun): java-gcj-compat
 BuildRequires:  java-gcj-compat-devel
 %else
 BuildRequires:  java-devel >= 0:1.4.2
