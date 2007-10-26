@@ -2,16 +2,14 @@
 %define gcj_support     1
 
 Name:           sleep
-Version:        2.1.18
-Release:        %mkrel 2
+Version:        2.1.19
+Release:        %mkrel 1
 Epoch:          1
-Summary:        A perl inspired embed-able scripting language for Java applications
+Summary:        Perl inspired embedable scripting language for Java applications
 License:        LGPL
 URL:            http://sleep.hick.org/
 Group:          Development/Java
-#Vendor:        JPackage Project
-#Distribution:  JPackage
-Source0:        http://sleep.hick.org/download/sleep21b18.tgz
+Source0:        http://sleep.hick.org/download/sleep21b19.tgz
 Patch0:         sleep-crosslink.patch
 BuildRequires:  ant >= 0:1.6
 BuildRequires:  java-javadoc
@@ -22,7 +20,7 @@ BuildRequires:  java-gcj-compat-devel
 BuildRequires:  java-devel >= 0:1.4.2
 BuildArch:      noarch
 %endif
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 Sleep is a perl inspired embed-able scripting language for Java 
@@ -40,7 +38,7 @@ solution for scripting Java applications. Features:
     * Perl inspired language syntax
     * Fast execution/small runtime size (160 KB)
     * Parsed scripts can be serialized
-    * Easy API for making application data structures / functionality
+    * Easy API for making application data structures/functionality
       available to scripters
     * Full documentation for application developers and end-user scripters
 
@@ -96,5 +94,3 @@ Javadoc for %{name}.
 %dir %{_javadocdir}/%{name}-%{version}
 %{_javadocdir}/%{name}-%{version}/*
 %dir %{_javadocdir}/%{name}
-
-
