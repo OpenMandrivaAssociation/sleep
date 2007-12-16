@@ -3,7 +3,7 @@
 
 Name:           sleep
 Version:        2.1.19
-Release:        %mkrel 1
+Release:        %mkrel 2
 Epoch:          1
 Summary:        Perl inspired embedable scripting language for Java applications
 License:        LGPL
@@ -13,7 +13,7 @@ Source0:        http://sleep.hick.org/download/sleep21b19.tgz
 Patch0:         sleep-crosslink.patch
 BuildRequires:  ant >= 0:1.6
 BuildRequires:  java-javadoc
-BuildRequires:  jpackage-utils >= 0:1.5
+BuildRequires:  java-rpmbuild >= 0:1.5
 %if %{gcj_support}
 BuildRequires:  java-gcj-compat-devel
 %else
