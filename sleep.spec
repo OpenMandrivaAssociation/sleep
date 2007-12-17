@@ -20,7 +20,6 @@ BuildRequires:  java-gcj-compat-devel
 BuildRequires:  java-devel >= 0:1.4.2
 BuildArch:      noarch
 %endif
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 Sleep is a perl inspired embed-able scripting language for Java 
