@@ -3,7 +3,7 @@
 
 Name:           sleep
 Version:        2.1.20
-Release:        %mkrel 0.0.2
+Release:        %mkrel 0.0.3
 Epoch:          1
 Summary:        Perl inspired embedable scripting language for Java applications
 License:        LGPL
@@ -11,6 +11,7 @@ URL:            http://sleep.hick.org/
 Group:          Development/Java
 Source0:        http://sleep.dashnine.org/download/sleep21b20.tgz
 Patch0:         sleep-crosslink.patch
+Patch1:         sleep-build.patch
 BuildRequires:  ant >= 0:1.6
 BuildRequires:  java-javadoc
 BuildRequires:  java-rpmbuild >= 0:1.5
@@ -51,6 +52,7 @@ Javadoc for %{name}.
 %prep
 %setup -q -n %{name}
 %patch0 -p1
+%patch1 -p1
 %{__perl} -pi -e 's/\r$//g' docs/parser.htm docs/common.htm license.txt
 
 %build
@@ -66,10 +68,8 @@ Javadoc for %{name}.
 
 # javadoc
 %{__mkdir_p} %{buildroot}%{_javadocdir}/%{name}-%{version}
-%{__cp} -a docs/api/* %{buildroot}%{_javadocdir}/%{name}-%{version}
+%{__cp} -a api/* %{buildroot}%{_javadocdir}/%{name}-%{version}
 %{__ln_s} %{name}-%{version} %{buildroot}%{_javadocdir}/%{name}
-# FIXME: breaks rpmbuild -bi --short-circuit
-%{__rm} -rf docs/api
 
 %if %{gcj_support}
 %{_bindir}/aot-compile-rpm
@@ -80,7 +80,7 @@ Javadoc for %{name}.
 
 %files
 %defattr(0644,root,root,0755)
-%doc license.txt readme.txt docs/*
+%doc license.txt readme.txt whatsnew.txt docs/*
 %{_javadir}/%{name}.jar
 %{_javadir}/%{name}-%{version}.jar
 %if %{gcj_support}
