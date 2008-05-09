@@ -2,14 +2,14 @@
 %define gcj_support     1
 
 Name:           sleep
-Version:        2.1.20
-Release:        %mkrel 0.0.3
+Version:        2.1.25
+Release:        %mkrel 0.0.1
 Epoch:          1
 Summary:        Perl inspired embedable scripting language for Java applications
 License:        LGPL
 URL:            http://sleep.hick.org/
 Group:          Development/Java
-Source0:        http://sleep.dashnine.org/download/sleep21b20.tgz
+Source0:        http://sleep.dashnine.org/download/sleep21b25.tgz
 Patch0:         sleep-crosslink.patch
 Patch1:         sleep-build.patch
 BuildRequires:  ant >= 0:1.6
@@ -71,9 +71,7 @@ Javadoc for %{name}.
 %{__cp} -a api/* %{buildroot}%{_javadocdir}/%{name}-%{version}
 %{__ln_s} %{name}-%{version} %{buildroot}%{_javadocdir}/%{name}
 
-%if %{gcj_support}
-%{_bindir}/aot-compile-rpm
-%endif
+%{gcj_compile}
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -83,10 +81,7 @@ Javadoc for %{name}.
 %doc license.txt readme.txt whatsnew.txt docs/*
 %{_javadir}/%{name}.jar
 %{_javadir}/%{name}-%{version}.jar
-%if %{gcj_support}
-%dir %{_libdir}/gcj/%{name}
-%attr(-,root,root) %{_libdir}/gcj/%{name}/*.jar.*
-%endif
+%{gcj_files}
 
 %files javadoc
 %defattr(0644,root,root,0755)
