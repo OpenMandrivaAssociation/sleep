@@ -2,14 +2,14 @@
 %define gcj_support     1
 
 Name:           sleep
-Version:        2.1.26
+Version:        2.1
 Release:        %mkrel 0.0.1
-Epoch:          1
+Epoch:          2
 Summary:        Perl inspired embedable scripting language for Java applications
 License:        LGPL
 URL:            http://sleep.hick.org/
 Group:          Development/Java
-Source0:        http://sleep.dashnine.org/download/sleep21b26.tgz
+Source0:        http://sleep.dashnine.org/download/sleep21.tgz
 Patch0:         sleep-crosslink.patch
 Patch1:         sleep-build.patch
 BuildRequires:  ant >= 0:1.6
