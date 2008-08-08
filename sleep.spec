@@ -3,7 +3,7 @@
 
 Name:           sleep
 Version:        2.1
-Release:        %mkrel 0.0.1
+Release:        %mkrel 2.0.1
 Epoch:          2
 Summary:        Perl inspired embedable scripting language for Java applications
 License:        LGPL
